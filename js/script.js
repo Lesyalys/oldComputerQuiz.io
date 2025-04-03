@@ -2,8 +2,8 @@ const backgroundImages = [
     'url("./public/img/modalBack.png")',
     'url("./public/img/modalBack2.png")',
     'url("./public/img/modalBack3.png")',
-    'url("./public/img/modalBack4.png")',
-    'url("./public/img/modalBack5.png")'
+    // 'url("./public/img/modalBack4.png")',
+    // 'url("./public/img/modalBack5.png")'
 ];
 
 // Данные вопросов (5 категорий по 5 вопросов)
@@ -11,7 +11,7 @@ const questionsData = [
     {
         name: "Периферийные устройства",
         questions: [
-            { text: "Какой разъём чаще всего используется для подключения флеш-накопителей?", answer: "USB", points: 100 },
+            { text: "Какой разъём используется для подключения флеш-накопителей?", answer: "USB", points: 100 },
             { text: "Как называется устройство для ввода рукописного текста и рисунков в компьютер? ", answer: "Графический планшет", points: 200 },
             { text: "Какой тип принтера использует порошковый краситель для печати?", answer: "Лазерный принтер", points: 300 },
             { text: "Как называется устройство, позволяющее переводить аналоговое видео в цифровой формат?", answer: "Видеозахват/TV-тюнер", points: 400 },
@@ -66,7 +66,7 @@ const state = {
     usedQuestions: [], // Массив использованных вопросов (категория-вопрос)
     currentQuestion: null,
     timer: null,
-    timeLeft: 30,
+    timeLeft: 60,
     gameStarted: false,
     timerExpired: false,
     questionClosedManually: false
@@ -236,7 +236,7 @@ function showQuestion(categoryId, questionId) {
 
 // Запуск таймера
 function startTimer() {
-    state.timeLeft = 30;
+    state.timeLeft = 60;
     elements.timer.textContent = state.timeLeft;
     state.timerExpired = false; // Добавляем флаг истечения времени
     

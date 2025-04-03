@@ -19,7 +19,7 @@ h1 {
     color: #e7e7ec;
     background-color: #1F4D7F;
     align-content: center;
-    height: 2em;
+    /* height: 2em; */
     border-radius: 10px;
     margin-bottom: 30px;
 }
@@ -40,17 +40,22 @@ h1 {
 }
 
 .team-input {
-    flex: 1;
+    display: flex;
+    /* flex: 1; */
     min-width: 200px;
     padding-right: 20px;
+    flex-direction: column;
+    width: 100%;
 }
 
 input {
+    display: inline-block;
     padding: 10px;
     border-radius: 5px;
     border: none;
-    width: 100%;
+    /* width: 100%; */
     margin-top: 5px;
+    
 }
 
 button {
@@ -69,7 +74,7 @@ button:hover {
 }
 
 button:disabled {
-    background-color: #1a0d39;
+    background-color: #0d1539;
     cursor: not-allowed;
 }
 
@@ -123,7 +128,7 @@ button:disabled {
 }
 
 .question.used {
-    background-color: #0d3158;
+    background-color: #0d1539;
     color: #666;
     cursor: not-allowed;
 }
@@ -146,8 +151,12 @@ button:disabled {
     background-color: #1F4D7F;
     /* background-image: url('../public/img/modalBack.png'); */
     background-size: cover;
-    background-position: center;
-    padding: 30px;
+    background-position: top;
+    /* padding: 30px; */
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     border-radius: 10px;
     max-width: 800px;
     width: 90%;
@@ -223,8 +232,8 @@ button:disabled {
     right: 10px;
     background: none;
     border: none;
-    background-color: #F6F6F6;
-    color: #1F4D7F;
+    background-color: #1F4D7F;
+    color: #F6F6F6;
     font-size: 24px;
     cursor: pointer;
 }
