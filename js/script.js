@@ -76,6 +76,7 @@ const state = {
 const elements = {
     teamsContainer: document.getElementById('teamsContainer'),
     addTeam: document.getElementById('addTeam'),
+    removeTeam: document.getElementById('removeTeam'),
     startGame: document.getElementById('startGame'),
     gameBoard: document.getElementById('gameBoard'),
     categories: document.getElementById('categories'),
@@ -97,7 +98,7 @@ function init() {
     
     // Слушатели событий
     elements.addTeam.addEventListener('click', addTeamInput);
-    document.getElementById('removeTeam').addEventListener('click', delTeamInput);
+    elements.removeTeam.addEventListener('click', delTeamInput);
     elements.startGame.addEventListener('click', startGame);
     elements.showAnswer.addEventListener('click', showCorrectAnswer);
     elements.addPoints.addEventListener('click', addPointsToTeam);
