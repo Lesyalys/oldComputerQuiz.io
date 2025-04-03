@@ -1,3 +1,11 @@
+const backgroundImages = [
+    'url("../public/img/modalBack.png")',
+    'url("../public/img/modalBack2.png")',
+    'url("../public/img/modalBack3.png")',
+    'url("../public/img/modalBack4.png")',
+    'url("../public/img/modalBack5.png")'
+];
+
 // Данные вопросов (5 категорий по 5 вопросов)
 const questionsData = [
     {
@@ -201,6 +209,10 @@ function showQuestion(categoryId, questionId) {
         question: questionId,
         ...question
     };
+    
+    // Показываем модальное окно
+    const randomBg = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+    document.querySelector('.modal-content').style.backgroundImage = randomBg;
     
     // Показываем модальное окно
     elements.modalQuestionText.textContent = question.text;
