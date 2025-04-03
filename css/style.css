@@ -20,6 +20,8 @@ h1 {
     background-color: #1F4D7F;
     align-content: center;
     /* height: 2em; */
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 10px;
     margin-bottom: 30px;
 }
@@ -28,6 +30,8 @@ h1 {
 .setup {
     background-color: #1F4D7F;
     padding: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 10px;
     margin-bottom: 30px;
 }
@@ -236,4 +240,35 @@ button:disabled {
     color: #F6F6F6;
     font-size: 24px;
     cursor: pointer;
+}
+
+
+/* Стили для окна победителя */
+.winner-content {
+    background-image: url('../public/img/winner.png');
+    text-align: center;
+    max-width: 500px;
+}
+
+.winner-info {
+    font-size: 24px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #1F4D7F;
+    border-radius: 10px;
+}
+
+#restartGame {
+    background-color: #4CAF50;
+    font-size: 18px;
+    padding: 12px 24px;
+}
+
+#restartGame:hover {
+    background-color: #45a049;
+}
+
+#winnerTitle{
+    background-color: #F6F6F6;
+    color: #1F4D7F;
 }

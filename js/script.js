@@ -101,6 +101,7 @@ function init() {
     elements.showAnswer.addEventListener('click', showCorrectAnswer);
     elements.addPoints.addEventListener('click', addPointsToTeam);
     elements.closeModal.addEventListener('click', closeModal);
+    document.getElementById('restartGame').addEventListener('click', resetGame);
 }
 
 // Добавление поля для ввода названия команды
@@ -292,7 +293,7 @@ function addPointsToTeam() {
         updateScoreBoard();
         updateModalScoreBoard();
         createGameBoard();
-        
+        checkGameEnd();
         // Закрываем модальное окно (без установки флага questionClosedManually)
         closeModal();
     }
@@ -360,6 +361,69 @@ function updateModalScoreBoard() {
         `;
         elements.modalTeamsScore.appendChild(teamEl);
     });
+}
+
+
+// Проверка окончания игры
+function checkGameEnd() {
+    // Проверяем, остались ли неиспользованные вопросы
+    const totalQuestions = questionsData.reduce((sum, category) => sum + category.questions.length, 0);
+    if (state.usedQuestions.length === totalQuestions) {
+        showWinner();
+    }
+}
+
+// Показать победителя
+function showWinner() {
+    // Находим команду с максимальным количеством очков
+    let winner = state.teams[0];
+    let isDraw = false;
+    
+    for (let i = 1; i < state.teams.length; i++) {
+        if (state.teams[i].points > winner.points) {
+            winner = state.teams[i];
+            isDraw = false;
+        } else if (state.teams[i].points === winner.points) {
+            isDraw = true;
+        }
+    }
+    
+    const winnerModal = document.getElementById('winnerModal');
+    const winnerInfo = document.getElementById('winnerInfo');
+    
+    if (isDraw) {
+        // Ничья
+        document.getElementById('winnerTitle').textContent = 'Ничья!';
+        winnerInfo.innerHTML = `
+            <p>Несколько команд набрали одинаковое количество очков:</p>
+            ${state.teams.filter(t => t.points === winner.points)
+                .map(t => `<p><strong>${t.name}</strong> - ${t.points} очков</p>`)
+                .join('')}
+        `;
+    } else {
+        // Есть победитель
+        winnerInfo.innerHTML = `
+            <p>Победила команда <strong>${winner.name}</strong>!</p>
+            <p>С результатом: <strong>${winner.points}</strong> очков</p>
+        `;
+    }
+    
+    winnerModal.style.display = 'flex';
+}
+
+// Сброс игры
+function resetGame() {
+    state.teams.forEach(team => {
+        team.points = 0;
+    });
+    state.usedQuestions = [];
+    state.gameStarted = false;
+    
+    document.getElementById('winnerModal').style.display = 'none';
+    document.querySelector('.setup').style.display = 'block';
+    elements.gameBoard.style.display = 'none';
+    
+    updateScoreBoard();
 }
 
 // Запуск игры при загрузке страницы
