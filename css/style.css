@@ -1,6 +1,8 @@
+/* colors: #c2e9fc  #e7f6fc*/
+
 body {
     font-family: 'Arial', sans-serif;
-    /* background-color: #1a1a2e; */
+    /* background-color: #F8F9FA; */
     background-image: url('../public/img/1922.png');
     color: #e7e7ec;
     margin: 0;
@@ -15,7 +17,7 @@ body {
 h1 {
     text-align: center;
     color: #e7e7ec;
-    background-color: #262379;
+    background-color: #1F4D7F;
     align-content: center;
     height: 2em;
     border-radius: 10px;
@@ -24,7 +26,7 @@ h1 {
 
 /* Стили для настройки команд */
 .setup {
-    background-color: #262379;
+    background-color: #1F4D7F;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -40,6 +42,7 @@ h1 {
 .team-input {
     flex: 1;
     min-width: 200px;
+    padding-right: 20px;
 }
 
 input {
@@ -51,7 +54,7 @@ input {
 }
 
 button {
-    background-color: #355FB5;
+    background-color: #0d3158;
     color: #e7e7ec;
     border: none;
     padding: 10px 20px;
@@ -62,7 +65,7 @@ button {
 }
 
 button:hover {
-    background-color: #FCB538;
+    background-color: #0a59ae;
 }
 
 button:disabled {
@@ -84,7 +87,7 @@ button:disabled {
 
 .category {
     flex: 1;
-    background-color: #262379;
+    background-color: #1F4D7F;
     border-radius: 5px;
     padding: 10px;
     text-align: center;
@@ -107,7 +110,7 @@ button:disabled {
 }
 
 .question {
-    background-color: #131144;
+    background-color: #0f3966;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
@@ -116,11 +119,11 @@ button:disabled {
 }
 
 .question:hover {
-    background-color: #FCB538;
+    background-color: #0a59ae;
 }
 
 .question.used {
-    background-color: #111120;
+    background-color: #0d3158;
     color: #666;
     cursor: not-allowed;
 }
@@ -140,7 +143,7 @@ button:disabled {
 }
 
 .modal-content {
-    background-color: #355FB5;
+    background-color: #1F4D7F;
     /* background-image: url('../public/img/modalBack.png'); */
     background-size: cover;
     background-position: center;
@@ -157,7 +160,7 @@ button:disabled {
     margin-bottom: 30px;
     min-height: 100px;
     background-color: #e7e7ec;
-    color: #111120;
+    color: #195B8B;
     font-weight: bold;
     border-radius: 10px;
     align-content: center;
@@ -167,7 +170,7 @@ button:disabled {
 .timer {
     font-size: 30px;
     background-color: #e7e7ec;
-    color: #111120;
+    color: #195B8B;
     text-align: center;
     margin: 20px 0;
 }
@@ -176,7 +179,7 @@ button:disabled {
     font-size: 22px;
     margin-top: 20px;
     padding: 15px;
-    background-color: #262379;
+    background-color: #1F4D7F;
     color: #e7e7ec;
     border-radius: 5px;
     display: none;
@@ -191,7 +194,7 @@ button:disabled {
 }
 
 .team-score {
-    background-color: #262379;
+    background-color: #1F4D7F;
     padding: 15px;
     border-radius: 5px;
     min-width: 150px;
@@ -220,7 +223,8 @@ button:disabled {
     right: 10px;
     background: none;
     border: none;
-    color: white;
+    background-color: #F6F6F6;
+    color: #1F4D7F;
     font-size: 24px;
     cursor: pointer;
 }
