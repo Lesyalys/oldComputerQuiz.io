@@ -51,7 +51,7 @@ input {
 }
 
 button {
-    background-color: #2d2994;
+    background-color: #355FB5;
     color: #e7e7ec;
     border: none;
     padding: 10px 20px;
@@ -62,7 +62,7 @@ button {
 }
 
 button:hover {
-    background-color: #7446e0;
+    background-color: #FCB538;
 }
 
 button:disabled {
@@ -107,7 +107,7 @@ button:disabled {
 }
 
 .question {
-    background-color: #16213e;
+    background-color: #355FB5;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
@@ -116,7 +116,7 @@ button:disabled {
 }
 
 .question:hover {
-    background-color: #472890;
+    background-color: #FCB538;
 }
 
 .question.used {
@@ -140,7 +140,7 @@ button:disabled {
 }
 
 .modal-content {
-    background-color: #16213e;
+    background-color: #355FB5;
     /* background-image: url('../public/img/modalBack.png'); */
     background-size: cover;
     background-position: center;
@@ -176,7 +176,7 @@ button:disabled {
     font-size: 22px;
     margin-top: 20px;
     padding: 15px;
-    background-color: #1d3d63;
+    background-color: #262379;
     color: #e7e7ec;
     border-radius: 5px;
     display: none;
@@ -191,7 +191,7 @@ button:disabled {
 }
 
 .team-score {
-    background-color: #1d3d63;
+    background-color: #262379;
     padding: 15px;
     border-radius: 5px;
     min-width: 150px;
