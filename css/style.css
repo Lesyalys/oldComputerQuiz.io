@@ -1,0 +1,212 @@
+body {
+    font-family: 'Arial', sans-serif;
+    /* background-color: #1a1a2e; */
+    background-image: url('/public/img/1922.png');
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #e7e7ec;
+    background-color: #262379;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Стили для настройки команд */
+.setup {
+    background-color: #262379;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.teams-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.team-input {
+    flex: 1;
+    min-width: 200px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #4440b1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #221beb;
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+/* Стили для игрового поля */
+.game-board {
+    display: none;
+    margin-top: 20px;
+}
+
+.categories {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.category {
+    flex: 1;
+    background-color: #0f3460;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.category-name {
+    font-weight: bold;
+    margin-bottom: 15px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question {
+    background-color: #16213e;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.question:hover {
+    background-color: #1a3a6e;
+}
+
+.question.used {
+    background-color: #333;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Стили для модального окна с вопросом */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #16213e;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+}
+
+.question-text {
+    font-size: 24px;
+    margin-bottom: 30px;
+    min-height: 100px;
+}
+
+.timer {
+    font-size: 30px;
+    text-align: center;
+    margin: 20px 0;
+    color: #e94560;
+}
+
+.answer {
+    font-size: 22px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #0f3460;
+    border-radius: 5px;
+    display: none;
+}
+
+.teams-score {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.team-score {
+    background-color: #0f3460;
+    padding: 15px;
+    border-radius: 5px;
+    min-width: 150px;
+    text-align: center;
+}
+
+.team-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-points {
+    font-size: 24px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}

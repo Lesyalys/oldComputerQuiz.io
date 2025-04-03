@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя Игра - Викторина по ЭВМ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Моя Игра - Викторина по ЭВМ</h1>
+        
+        <div class="setup">
+            <h2>Настройка команд</h2>
+            <div class="teams-container" id="teamsContainer">
+                <!-- Здесь будут поля для ввода названий команд -->
+            </div>
+            <button id="addTeam">Добавить команду</button>
+            <button id="startGame" disabled>Начать игру</button>
+        </div>
+        
+        <div class="game-board" id="gameBoard">
+            <div class="categories" id="categories">
+                <!-- Категории и вопросы будут здесь -->
+            </div>
+            
+            <div class="teams-score" id="teamsScore">
+                <!-- Счет команд будет здесь -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальное окно с вопросом -->
+    <div class="modal" id="questionModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="question-text" id="modalQuestionText"></div>
+            <div class="timer" id="timer">30</div>
+            <div class="answer" id="correctAnswer"></div>
+            <div class="teams-score" id="modalTeamsScore"></div>
+            <div class="controls">
+                <button id="showAnswer">Показать ответ</button>
+                <button id="addPoints" disabled>Начислить баллы</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
