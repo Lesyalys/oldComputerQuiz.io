@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     /* background-color: #1a1a2e; */
     background-image: url('../public/img/1922.png');
-    color: white;
+    color: #e7e7ec;
     margin: 0;
     padding: 20px;
 }
@@ -51,8 +51,8 @@ input {
 }
 
 button {
-    background-color: #4440b1;
-    color: white;
+    background-color: #2d2994;
+    color: #e7e7ec;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -62,11 +62,11 @@ button {
 }
 
 button:hover {
-    background-color: #221beb;
+    background-color: #7446e0;
 }
 
 button:disabled {
-    background-color: #555;
+    background-color: #1a0d39;
     cursor: not-allowed;
 }
 
@@ -116,11 +116,11 @@ button:disabled {
 }
 
 .question:hover {
-    background-color: #1a3a6e;
+    background-color: #472890;
 }
 
 .question.used {
-    background-color: #333;
+    background-color: #111120;
     color: #666;
     cursor: not-allowed;
 }
@@ -140,7 +140,9 @@ button:disabled {
 }
 
 .modal-content {
-    background-color: #16213e;
+    /* background-color: #16213e; */
+    background-image: url('../public/img/modalBack.png');
+    background-position: center;
     padding: 30px;
     border-radius: 10px;
     max-width: 800px;
@@ -152,20 +154,28 @@ button:disabled {
     font-size: 24px;
     margin-bottom: 30px;
     min-height: 100px;
+    background-color: #e7e7ec;
+    color: #111120;
+    font-weight: bold;
+    border-radius: 10px;
+    align-content: center;
+    padding-left: 5px;
 }
 
 .timer {
     font-size: 30px;
+    background-color: #e7e7ec;
+    color: #111120;
     text-align: center;
     margin: 20px 0;
-    color: white;
 }
 
 .answer {
     font-size: 22px;
     margin-top: 20px;
     padding: 15px;
-    background-color: #0f3460;
+    background-color: #1d3d63;
+    color: #e7e7ec;
     border-radius: 5px;
     display: none;
 }
@@ -179,7 +189,7 @@ button:disabled {
 }
 
 .team-score {
-    background-color: #0f3460;
+    background-color: #1d3d63;
     padding: 15px;
     border-radius: 5px;
     min-width: 150px;

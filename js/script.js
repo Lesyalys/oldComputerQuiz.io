@@ -43,11 +43,11 @@ const questionsData = [
     {
         name: "Алгоритмы и вычисления",
         questions: [
-            { text: "Какая самая длинная река в мире?", answer: "Нил", points: 100 },
-            { text: "В какой стране находится Эйфелева башня?", answer: "Франция", points: 200 },
-            { text: "Какой океан самый большой по площади?", answer: "Тихий", points: 300 },
-            { text: "Какая столица Австралии?", answer: "Канберра", points: 400 },
-            { text: "Сколько континентов на Земле?", answer: "7", points: 500 }
+            { text: "Как называется последовательность инструкций для выполнения вычислений?", answer: "Алгоритм", points: 100 },
+            { text: "Как называется метод поиска элемента в отсортированном массиве с делением на части? ", answer: "Бинарный поиск", points: 200 },
+            { text: "Какая структура данных работает по принципу «первый вошёл – первый вышел»?", answer: "Очередь", points: 300 },
+            { text: "Какой алгоритм используется для нахождения кратчайшего пути в графе?", answer: "Алгоритм Дейкстры", points: 400 },
+            { text: "В чём заключается принцип работы квантовых вычислений по сравнению с классическими?", answer: "Использование кубитов, суперпозиции и квантового запутывания", points: 500 }
         ]
     }
 ];
@@ -59,7 +59,9 @@ const state = {
     currentQuestion: null,
     timer: null,
     timeLeft: 30,
-    gameStarted: false
+    gameStarted: false,
+    timerExpired: false,
+    questionClosedManually: false
 };
 
 // Элементы DOM
@@ -215,12 +217,16 @@ function showQuestion(categoryId, questionId) {
     
     // Обновляем таблицу команд в модальном окне
     updateModalScoreBoard();
+
+    state.timerExpired = false;
+    state.questionClosedManually = false;
 }
 
 // Запуск таймера
 function startTimer() {
     state.timeLeft = 30;
     elements.timer.textContent = state.timeLeft;
+    state.timerExpired = false; // Добавляем флаг истечения времени
     
     if (state.timer) {
         clearInterval(state.timer);
@@ -232,6 +238,7 @@ function startTimer() {
         
         if (state.timeLeft <= 0) {
             clearInterval(state.timer);
+            state.timerExpired = true; // Устанавливаем флаг при истечении времени
             showCorrectAnswer();
         }
     }, 1000);
@@ -242,12 +249,18 @@ function showCorrectAnswer() {
     clearInterval(state.timer);
     elements.correctAnswer.style.display = 'block';
     elements.showAnswer.disabled = true;
-    elements.addPoints.disabled = false;
+    
+    // Если время вышло, делаем кнопку "Начислить баллы" неактивной
+    elements.addPoints.disabled = state.timerExpired;
+    
+    // Если время не вышло, оставляем возможность начислить баллы
+    if (!state.timerExpired) {
+        elements.addPoints.disabled = false;
+    }
 }
 
 // Начислить баллы выбранной команде
 function addPointsToTeam() {
-    // Находим выбранную команду (первая с чекбоксом)
     const selectedTeam = Array.from(document.querySelectorAll('input[name="modal-team"]:checked'))[0];
     
     if (selectedTeam) {
@@ -263,14 +276,12 @@ function addPointsToTeam() {
             question: state.currentQuestion.question
         });
         
-        // Обновляем таблицы счета
+        // Обновляем интерфейс
         updateScoreBoard();
         updateModalScoreBoard();
-        
-        // Пересоздаем игровое поле (чтобы обновить использованные вопросы)
         createGameBoard();
         
-        // Закрываем модальное окно
+        // Закрываем модальное окно (без установки флага questionClosedManually)
         closeModal();
     }
 }
@@ -279,7 +290,32 @@ function addPointsToTeam() {
 function closeModal() {
     clearInterval(state.timer);
     elements.questionModal.style.display = 'none';
+    
+    // Если окно закрыто без начисления баллов (вручную или по таймеру)
+    if ((state.questionClosedManually || state.timerExpired) && 
+        !state.usedQuestions.some(q => 
+            q.category === state.currentQuestion?.category && 
+            q.question === state.currentQuestion?.question)) {
+        
+        // Помечаем вопрос как использованный без начисления баллов
+        state.usedQuestions.push({
+            category: state.currentQuestion.category,
+            question: state.currentQuestion.question
+        });
+        
+        // Обновляем игровое поле
+        createGameBoard();
+    }
+    
+    // Сбрасываем текущий вопрос
+    state.currentQuestion = null;
 }
+
+elements.closeModal.addEventListener('click', () => {
+    state.questionClosedManually = true;
+    closeModal();
+});
+
 
 // Обновить таблицу счета на главном экране
 function updateScoreBoard() {
