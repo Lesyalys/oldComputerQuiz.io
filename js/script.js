@@ -1,9 +1,9 @@
 const backgroundImages = [
-    'url("../public/img/modalBack.png")',
-    'url("../public/img/modalBack2.png")',
-    'url("../public/img/modalBack3.png")',
-    'url("../public/img/modalBack4.png")',
-    'url("../public/img/modalBack5.png")'
+    'url("./public/img/modalBack.png")',
+    'url("./public/img/modalBack2.png")',
+    'url("./public/img/modalBack3.png")',
+    'url("./public/img/modalBack4.png")',
+    'url("./public/img/modalBack5.png")'
 ];
 
 // Данные вопросов (5 категорий по 5 вопросов)
