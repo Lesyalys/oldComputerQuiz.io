@@ -272,3 +272,12 @@ button:disabled {
     background-color: #F6F6F6;
     color: #1F4D7F;
 }
+
+#removeTeam {
+    background-color: rgba(146, 12, 12, 0.486);
+    margin: 0 10px;
+}
+
+#removeTeam:hover {
+    background-color: #5c0a0a;
+}
