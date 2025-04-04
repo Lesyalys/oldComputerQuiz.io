@@ -357,6 +357,7 @@ function closeModal() {
         
         // Обновляем игровое поле
         createGameBoard();
+        checkGameEnd();
     }
     
     // Сбрасываем текущий вопрос
