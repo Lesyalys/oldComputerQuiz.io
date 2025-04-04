@@ -1,0 +1,20 @@
+{
+  "name": "victorinastudy",
+  "version": "1.0.0",
+  "description": "<h1 align = \"center\">Computer Quiz for NVSU</h1>\r <a href = \"https://nvsu.ru/\" target=\"_blink\"><img src=\"/public/img/logoNVSU2.png\"></a>",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lesyalys/vicrotina.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lesyalys/vicrotina/issues"
+  },
+  "homepage": "https://github.com/Lesyalys/vicrotina#readme"
+}
