@@ -1,4 +1,3 @@
-
 import {questionsData,state} from'./const.js';
 import { showWinner } from './showWinner.js';
 

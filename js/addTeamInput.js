@@ -1,7 +1,5 @@
-// import './const'
-import { startGame } from "./startGame.js";
 import {state,elements} from'./const.js';
-import { delTeamInput } from "./delTeamInput.js";
+import { checkStartConditions } from "./checkStartConditions.js";
 
 export function addTeamInput() {
     const teamId = state.teams.length;

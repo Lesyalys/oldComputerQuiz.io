@@ -1,4 +1,3 @@
-
 import {state,elements} from'./const.js';
 import { createGameBoard } from './createGameBoard.js';
 import { checkGameEnd } from './checkGameEnd.js';

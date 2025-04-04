@@ -5,8 +5,7 @@ import { showCorrectAnswer } from './showCorrectAnswer.js';
 import { addPointsToTeam } from './addPointsToTeam.js';
 import { resetGame } from './resetGame.js';
 import { closeModal } from './closeModal.js';
-// import {darkmode}
-import {backgroundImages,questionsData,state,elements} from'./const.js';
+import {state,elements} from'./const.js';
 
 function init() {
     addTeamInput();
@@ -18,7 +17,6 @@ function init() {
     elements.addPoints.addEventListener('click', addPointsToTeam);
     elements.closeModal.addEventListener('click', closeModal);
     elements.restartGame.addEventListener('click', resetGame);
-    // elements.logoNVSU.addEventListener('click', darkmode)
 }
 
 

@@ -1,4 +1,5 @@
 import {state,elements} from'./const.js';
+
 export function updateModalScoreBoard() {
     elements.modalTeamsScore.innerHTML = '';
     
