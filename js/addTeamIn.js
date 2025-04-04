@@ -1,4 +1,4 @@
-import './_homeStart.js'
+import './homeStart.js'
 
 export function addTeamInput() {
     const teamId = state.teams.length;

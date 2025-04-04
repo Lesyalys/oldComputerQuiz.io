@@ -1,5 +1,4 @@
 import {state,elements} from'./const.js';
-// import { showQuestion } from './showQuestion';
 import { createGameBoard } from './createGameBoard.js';
 import {updateScoreBoard} from './updateScoreBoard.js';
 
