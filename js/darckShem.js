@@ -9,12 +9,12 @@ export function darckShem(){
 
         if (corHref === 'css/style.css'){
             mode.setAttribute('href','css/dark.css')
-            logo.setAttribute('src','../public/imgDark/logoNVSU.png')
+            logo.setAttribute('src','./public/imgDark/logoNVSU.png')
 
         }
         else if (corHref === 'css/dark.css'){
             mode.setAttribute('href','css/style.css')
-            logo.setAttribute('src','../public/imgLight/logoNVSU.png')
+            logo.setAttribute('src','./public/imgLight/logoNVSU.png')
 
         }
     }
