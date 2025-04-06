@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
     <!-- <img id = "logoNVSU" src="./public/img/logoNVSU.png"> -->
     <div class="container">
         <!-- <div id="headH1">  -->
@@ -21,9 +20,10 @@
             <div class="teams-container" id="teamsContainer">
                 <!-- Здесь будут поля для ввода названий команд -->
             </div>
-            <button id="addTeam">Добавить команду</button>
-            <button id="removeTeam">Удалить команду</button>
-            <button id="startGame" disabled>Начать игру</button>
+            <div class="button-area">
+                <div class="button add" id="addTeam">Добавить команду</div>
+                <div class="button start disabled" id="startGame">Начать игру</div>
+            </div>
         </div>
         
         <div class="game-board" id="gameBoard">
@@ -40,14 +40,14 @@
     <!-- Модальное окно с вопросом -->
     <div class="modal" id="questionModal">
         <div class="modal-content">
-            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="button close-modal" id="closeModal">&times;</div>
             <div class="question-text" id="modalQuestionText"></div>
             <div class="timer" id="timer">60</div>
             <div class="answer" id="correctAnswer"></div>
             <div class="teams-score" id="modalTeamsScore"></div>
             <div class="controls">
-                <button id="showAnswer">Показать ответ</button>
-                <button id="addPoints" disabled>Начислить баллы</button>
+                <div class="button" id="showAnswer">Показать ответ</div>
+                <div class="button" id="addPoints">Начислить баллы</div>
             </div>
         </div>
     </div>
@@ -57,10 +57,10 @@
         <div class="modal-content winner-content">
             <h2 id="winnerTitle">Победитель!</h2>
             <div class="winner-info" id="winnerInfo"></div>
-            <button id="restartGame">Начать новую игру</button>
+            <div class="button restart" id="restartGame">Начать новую игру</div>
         </div>
     </div>
     
-    <script type="module" src="js/homeStart.js"></script>
+    <script type ="module"src="/js/homeStart.js"></script>
 </body>
 </html>

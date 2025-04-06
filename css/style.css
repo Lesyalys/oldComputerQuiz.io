@@ -20,19 +20,21 @@ h1 {
     background-color: #1F4D7F;
     align-content: center;
     /* height: 2em; */
+    padding: 20px;
     margin-left: 11%;
     margin-right: 11%;
     border-radius: 10px;
     margin-bottom: 30px;
 }
 #logoNVSU{
-    width: 9%;
+    width: 10%;
    object-fit: contain; 
    display: flex;
    margin-left: auto;
 }
 /* Стили для настройки команд */
 .setup {
+    text-align: center;
     background-color: #1F4D7F;
     padding: 20px;
     margin-left: 11%;
@@ -57,8 +59,16 @@ h1 {
     width: 100%;
 }
 
+.input-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 input {
     display: inline-block;
+    width: 50%;
+    height: 25px;
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -67,24 +77,88 @@ input {
     
 }
 
-button {
+.button {
     background-color: rgb(12, 108, 146);
     color: #e7e7ec;
     border: none;
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    align-content: center;
     transition: background-color 0.3s;
 }
 
-button:hover {
+.button:hover {
     background-color: #0a59ae;
 }
 
-button:disabled {
+.button.disabled {
     background-color: #0d1539;
     cursor: not-allowed;
+}
+
+.button.add {
+    background-color: rgb(13, 165, 64);
+}
+
+.button.add:hover {
+    background-color: rgb(14, 177, 68);
+}
+
+.button.add.disabled {
+    background-color: rgb(8, 88, 35);
+}
+
+.button.restart {
+    background-color: rgb(109, 13, 165);
+    height: 50px;
+}
+
+.button.restart:hover {
+    background-color: rgb(117, 14, 177);
+}
+
+.button.restart.disabled {
+    background-color: rgb(72, 8, 88);
+}
+
+.button.remove {
+    margin-left: 15px;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(165, 13, 13);
+}
+
+.button.remove:hover {
+    background-color: rgb(177, 14, 14);
+}
+
+.button.remove.disabled {
+    background-color: rgb(88, 8, 8);
+}
+
+.button.start {
+    background-color: rgb(13, 104, 165);
+}
+
+.button.start:hover {
+    background-color: rgb(14, 104, 177);
+}
+
+.button.start.disabled {
+    background-color: rgb(8, 52, 88);
+    cursor: not-allowed;
+}
+
+.button-area {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15px;
 }
 
 /* Стили для игрового поля */
@@ -159,6 +233,7 @@ button:disabled {
 .modal-content {
     background-color: #1F4D7F;
     /* background-image: url('../public/img/modalBack.png'); */
+    justify-items: center;
     background-size: cover;
     background-position: top;
     /* padding: 30px; */
@@ -239,6 +314,7 @@ button:disabled {
     position: absolute;
     top: 10px;
     right: 10px;
+    width: 0%;
     background: none;
     border: none;
     background-color: #1F4D7F;
@@ -263,26 +339,7 @@ button:disabled {
     border-radius: 10px;
 }
 
-#restartGame {
-    background-color: #4CAF50;
-    font-size: 18px;
-    padding: 12px 24px;
-}
-
-#restartGame:hover {
-    background-color: #45a049;
-}
-
 #winnerTitle{
     background-color: #F6F6F6;
     color: #1F4D7F;
-}
-
-#removeTeam {
-    background-color: rgba(146, 12, 12, 0.486);
-    margin: 0 10px;
-}
-
-#removeTeam:hover {
-    background-color: #5c0a0a;
 }

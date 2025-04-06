@@ -61,7 +61,7 @@ export const questionsData = [
 // Состояние игры
 export const state = {
     teams: [],
-    usedQuestions: [], // Массив использованных вопросов (категория-вопрос)
+    usedQuestions: [],
     currentQuestion: null,
     timer: null,
     timeLeft: 60,
@@ -70,11 +70,11 @@ export const state = {
     questionClosedManually: false
 };
 
+
 // Элементы DOM
 export const elements = {
     teamsContainer: document.getElementById('teamsContainer'),
     addTeam: document.getElementById('addTeam'),
-    removeTeam: document.getElementById('removeTeam'),
     startGame: document.getElementById('startGame'),
     gameBoard: document.getElementById('gameBoard'),
     categories: document.getElementById('categories'),
@@ -86,7 +86,5 @@ export const elements = {
     modalTeamsScore: document.getElementById('modalTeamsScore'),
     showAnswer: document.getElementById('showAnswer'),
     addPoints: document.getElementById('addPoints'),
-    closeModal: document.getElementById('closeModal'),
-    restartGame:document.getElementById('restartGame'),
-    logoNVSU: document.getElementById('logoNVSU')
+    closeModal: document.getElementById('closeModal')
 };

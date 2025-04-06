@@ -4,22 +4,14 @@ import { checkStartConditions } from "./checkStartConditions.js";
 
 export function delTeamInput() {
     try {
-        // Проверяем, есть ли команды для удаления
         if (state.teams.length <= 2) {
             throw new Error("Должно остаться минимум 2 команды!");
         }
+        const id = this.attributes[1].nodeValue;
+        const id_num = +id.slice(id.indexOf("-")+1);
+        this.parentElement.parentElement.remove()
 
-        // Получаем ID последней команды
-        const lastTeamId = state.teams.length - 1;
-        
-        // Удаляем из состояния
-        state.teams = state.teams.slice(0, -1);
-        
-        // Удаляем из DOM
-        const inputs = elements.teamsContainer.querySelectorAll('.team-input');
-        if (inputs.length > 0) {
-            elements.teamsContainer.removeChild(inputs[inputs.length - 1]);
-        }
+        state.teams = state.teams.slice(0, id_num).concat(state.teams.slice(id_num+1));
         
         // Обновляем нумерацию оставшихся команд
         updateTeamsNumbering();
@@ -32,5 +24,3 @@ export function delTeamInput() {
         alert(error.message);
     }
 }
-
-
