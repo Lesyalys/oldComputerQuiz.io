@@ -1,7 +1,7 @@
 export const backgroundImages = [
-    'url("./public/img/modalBack.png")',
-    'url("./public/img/modalBack2.png")',
-    'url("./public/img/modalBack3.png")',
+    'url("./public/imgLight/modalBack.png")',
+    'url("./public/imgLight/modalBack2.png")',
+    'url("./public/imgLight/modalBack3.png")',
 ];
 
 // Данные вопросов (5 категорий по 5 вопросов)
@@ -86,5 +86,7 @@ export const elements = {
     modalTeamsScore: document.getElementById('modalTeamsScore'),
     showAnswer: document.getElementById('showAnswer'),
     addPoints: document.getElementById('addPoints'),
-    closeModal: document.getElementById('closeModal')
+    closeModal: document.getElementById('closeModal'),
+    restartGame: document.getElementById('restartGame'),
+    darckShem: document.getElementById('logoNVSU')
 };
