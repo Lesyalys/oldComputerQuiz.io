@@ -2,10 +2,12 @@ import {questionsData,state,elements} from'./const.js';
 import { startTimer } from "./startTimer.js";
 import { updateModalScoreBoard } from "./updateModalScoreBoard.js";
 import { backgroundImages } from './const.js';
+import { addPointsToTeam } from './addPointsToTeam.js';
+import { showCorrectAnswer } from './showCorrectAnswer.js';
 
 export function showQuestion(categoryId, questionId) {
      // Проверяем, не использован ли уже вопрос
-     const isUsed = state.usedQuestions.some(q => 
+    const isUsed = state.usedQuestions.some(q => 
         q.category === categoryId && q.question === questionId);
     
     if (isUsed) return;
@@ -31,9 +33,10 @@ export function showQuestion(categoryId, questionId) {
     // Запускаем таймер
     startTimer();
     
-    // Обновляем кнопки
-    elements.showAnswer.disabled = false;
-    elements.addPoints.disabled = true;
+    elements.addPoints.classList.add('disabled');
+    elements.addPoints.removeEventListener('click', addPointsToTeam);
+    elements.showAnswer.classList.remove('disabled')
+    elements.showAnswer.addEventListener('click', showCorrectAnswer);
     
     // Обновляем таблицу команд в модальном окне
     updateModalScoreBoard();
