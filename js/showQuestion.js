@@ -1,5 +1,5 @@
 import {questionsData,state,elements} from'./const.js';
-import { startTimer } from "./startTimer.js";
+// import { startTimer } from "./startTimer.js";
 import { updateModalScoreBoard } from "./updateModalScoreBoard.js";
 import { backgroundImages } from './const.js';
 import { addPointsToTeam } from './addPointsToTeam.js';
@@ -31,7 +31,7 @@ export function showQuestion(categoryId, questionId) {
     elements.questionModal.style.display = 'flex';
     
     // Запускаем таймер
-    startTimer();
+    // startTimer();
     
     elements.addPoints.classList.add('disabled');
     elements.addPoints.removeEventListener('click', addPointsToTeam);
