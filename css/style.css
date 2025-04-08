@@ -173,6 +173,18 @@ input {
     display: none;
     margin-top: 20px;
 }
+.question-image-container {
+   display:block;
+   /* position: absolute; */
+   /* width: 0px; */
+}
+
+.question-image {
+    max-width: 20px;
+    max-height: 30px;
+    border-radius: 8px;
+    border: 2px solid #e94560;
+}
 
 .categories {
     display: flex;

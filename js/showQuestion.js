@@ -14,18 +14,29 @@ export function showQuestion(categoryId, questionId) {
     
     // Получаем вопрос
     const question = questionsData[categoryId].questions[questionId];
+
+    let questionContent = question.text;
+    if (question.img) {
+        questionContent = `
+            <div class="question-text">${question.text}</div>
+            <div class="question-image-container">
+                <img src="public/imgQuestion/${question.img}" alt="Иллюстрация к вопросу">
+            </div>
+        `;
+    }
     state.currentQuestion = {
         category: categoryId,
         question: questionId,
         ...question
     };
     
+    
     // Показываем модальное окно
     const randomBg = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
     document.querySelector('.modal-content').style.backgroundImage = randomBg;
     
     // Показываем модальное окно
-    elements.modalQuestionText.textContent = question.text;
+    elements.modalQuestionText.innerHTML = questionContent;
     elements.correctAnswer.textContent = question.answer;
     elements.correctAnswer.style.display = 'none';
     elements.questionModal.style.display = 'flex';
