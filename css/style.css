@@ -174,14 +174,17 @@ input {
     margin-top: 20px;
 }
 .question-image-container {
-   display:block;
+   display:flex;
+   justify-content: center;
+   margin-bottom: 1em;
+   padding-top: 0px;
    /* position: absolute; */
    /* width: 0px; */
 }
 
 .question-image {
     max-width: 20px;
-    max-height: 30px;
+    max-height: 15px;
     border-radius: 8px;
     border: 2px solid #e94560;
 }
@@ -272,13 +275,16 @@ input {
 .question-text {
     font-size: 24px;
     margin-bottom: 30px;
-    min-height: 100px;
+    /* min-height: 100px; */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 3px;
     background-color: #e7e7ec;
     color: #195B8B;
     font-weight: bold;
     border-radius: 10px;
     align-content: center;
-    padding-left: 5px;
 }
 
 .timer {

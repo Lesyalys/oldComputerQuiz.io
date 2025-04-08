@@ -175,6 +175,21 @@ input {
     margin-top: 20px;
 }
 
+.question-image-container {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 1em;
+    /* position: absolute; */
+    /* width: 0px; */
+ }
+ 
+ .question-image {
+     max-width: 20px;
+     max-height: 15px;
+     border-radius: 8px;
+     border: 2px solid #e94560;
+ }
+
 .categories {
     display: flex;
     gap: 15px;
