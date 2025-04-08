@@ -227,6 +227,8 @@ input {
 
 .question:hover {
     background-color: #0a59ae;
+    box-shadow: 0 0 1em #0455ec;
+    transition: all 300ms;
 }
 
 .question.used {
