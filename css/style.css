@@ -174,7 +174,7 @@ input {
     margin-top: 20px;
 }
 .question-image-container {
-    height: 300px;
+    height: 10em;
    display:flex;
    justify-content: center;
    margin-bottom: 1em;
