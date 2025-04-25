@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Lesyalys/vicrotina/issues"
   },
-  "homepage": "https://github.com/Lesyalys/vicrotina#readme"
+  "homepage": "https://github.com/Lesyalys/vicrotina#readme",
+  "dependencies": {
+    "@rive-app/canvas": "^2.27.0"
+  }
 }
